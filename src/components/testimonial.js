@@ -5,7 +5,6 @@ import { motion } from "framer-motion"
 import { useInView } from 'react-intersection-observer'
 
 import Gradient from "../images/Testimonial/TestimonialGradient.svg"
-import "swiper/swiper-bundle.min.css"
 import "./testimonial.scss"
 
 SwiperCore.use([Pagination, A11y]);
