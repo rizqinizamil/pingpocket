@@ -1,6 +1,8 @@
 import React from "react"
 import { motion } from "framer-motion"
 import { useInView } from 'react-intersection-observer'
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import "./feature.scss"
 
@@ -12,6 +14,31 @@ import iconIdea from "../images/Feature/icon-idea.svg"
 import iconTinder from "../images/Feature/icon-tinder.svg"
 
 const Feature = () => {
+    const data = useStaticQuery(graphql`
+		query {
+			imgMan: file(relativePath: { eq: "Feature/img-man.png" }) {
+				childImageSharp {
+					fixed(width: 267) {
+						...GatsbyImageSharpFixed
+					}
+				}
+			},
+			imgGirl: file(relativePath: { eq: "Feature/img-girl.png" }) {
+				childImageSharp {
+					fixed(width: 275) {
+						...GatsbyImageSharpFixed
+					}
+				}
+			},
+			imgGirlJump: file(relativePath: { eq: "Feature/img-girl-jump.png" }) {
+				childImageSharp {
+					fixed(width: 240) {
+						...GatsbyImageSharpFixed
+					}
+				}
+			}
+		}
+	`)
 
     const images = {
         visible: {
@@ -67,13 +94,22 @@ const Feature = () => {
         rootMargin: '-80px 0px',
     })
 
+    //console.log(data.imgMan.childImageSharp.fluid);
+
     return(
         <section className="feature">
             <div className="container">
                 <motion.div ref={ref} variants={images} initial="hidden" animate={ inView && "visible" } className="feature__left">
-                    <motion.img variants={imageItem} src={imgMan} alt="Man doing sport" className="img-man" />
-                    <motion.img variants={imageItem} src={imgGirl} alt="Girl doing sport" className="img-girl" />
-                    <motion.img variants={imageItem} src={imgGirlJump} alt="Girl doing jump sport" className="img-girl-jump"/>
+                    <motion.div variants={imageItem} className="img-man">
+                        <Img fixed={data.imgMan.childImageSharp.fixed} alt="Man doing sport" />
+                    </motion.div>
+                    <motion.div variants={imageItem} className="img-girl">
+                        <Img fixed={data.imgGirl.childImageSharp.fixed} alt="Girl doing sport" />
+                    </motion.div>
+                    <motion.div variants={imageItem} className="img-girl-jump">
+                        <Img fixed={data.imgGirlJump.childImageSharp.fixed} alt="Girl doing jump sport"/>
+                    </motion.div>
+                    
                 </motion.div>
 
                 <motion.div ref={ref} variants={featureRight} initial="hidden" animate={ inView && "visible" } className="feature__right">

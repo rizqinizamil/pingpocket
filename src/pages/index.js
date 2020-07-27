@@ -6,7 +6,7 @@ import Banner from "../components/banner"
 import Feature from "../components/feature"
 import Testimonial from "../components/testimonial"
 import Subscribe from "../components/subscribe"
-import Image from "../components/image"
+//import Image from "../components/image"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
