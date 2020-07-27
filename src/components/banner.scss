@@ -1,0 +1,39 @@
+.banner{
+    padding: 5.5rem 0 10rem;
+    @media all and (max-width: 667px){
+        padding-top: 0;
+        padding-bottom: 2.5rem;
+    }
+    &__left{
+        grid-column: 1 / 6;
+        @media all and (max-width: 667px){
+            grid-column: span 4;
+            margin-bottom: 2rem;
+        }
+        > *:not(.smokyBG){
+            position: relative;
+            z-index: 3;
+        }
+        h5{
+            margin-bottom: 2rem;
+        }
+        h1{
+            margin-bottom: 3.5rem;
+            //text-shadow: 0 10px 32px rgba(black, 0.25);
+            background: radial-gradient(56.53% 37.19% at 58.04% 48.89%, #36CFFF 0%, #EBC1F2 60%, var(--c-light) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: var(--c-white);
+        }
+    }
+    &__right{
+        grid-column: 6 / 13;
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        @media all and (max-width: 667px){
+            grid-column: span 4;
+        }
+    }
+}

@@ -1,0 +1,115 @@
+header{
+    padding: 1.5rem 0;
+    position: relative;
+    z-index: 9;
+    a{
+        color: var(--c-light-alt);
+        text-decoration: none;
+        text-transform: uppercase;
+        line-height: 1.5rem;
+        transition-property: color, text-shadow;
+        transition-duration: 300ms;
+        &:hover{
+            color: var(--c-white);
+            text-shadow: 0 3px 10px var(--c-light-alt);
+        }
+    }
+    .mobile-nav{
+        @media all and (max-width: 667px){
+            grid-column: span 4;
+            text-align: right;
+        }
+        @media all and (min-width: 1024px){
+            display: none;
+        }
+    }
+}
+.header{
+    &__nav{
+        align-items: center;
+        position: relative;
+        @media all and (max-width: 1023px){
+            padding-top: 3rem;
+        }
+        &__left{
+            grid-column: 1 / 6;
+            text-align: right;
+            @media all and (max-width: 667px){
+                grid-column: span 4;
+                text-align: center;
+            }
+            li{
+                margin-right: 3rem;
+                &:last-child{
+                    margin-right: 0;
+                }
+                @media all and (max-width: 1023px){
+                    margin-right: 0;
+                }
+            }
+        }
+        &__logo{
+            grid-column: 6 / 8;
+            text-align: center;
+            @media all and (max-width: 667px){
+                grid-column: span 4;
+            }
+            @media all and (max-width: 1024px){
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 0;
+            }
+            img{
+                margin: 0 auto ;
+                display: block;
+                @media all and (max-width: 667px){
+                    width: 30px;
+                }
+            }
+        }
+        &__right{
+            grid-column: 8 / 13;
+            @media all and (max-width: 667px){
+                grid-column: span 4;
+                text-align: center;
+            }
+            li{
+                margin-left: 3rem;
+                &:first-child{
+                    margin-left: 0;
+                }
+                @media all and (max-width: 1023px){
+                    margin-left: 0;
+                }
+            }
+        }
+        &__left,
+        &__right{
+            @media all and (max-width: 1023px){
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 300ms;
+                &.show{
+                    max-height: 300px;
+                }
+                a{
+                    display: block;
+                    padding: 0.5rem 0;
+                }
+            }
+        }
+        ul{
+            margin: 0;
+            font-size: .75rem;
+            font-weight: 600;
+            li{
+                display: inline-block;
+                margin-bottom: 0;
+                @media all and (max-width: 1023px){
+                    display: block;
+                }
+            }
+        }
+    }
+}

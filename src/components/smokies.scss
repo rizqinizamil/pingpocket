@@ -1,0 +1,24 @@
+.smokies{
+    display: block;
+    border-radius: 100%;
+}
+.phone-top{
+    position: absolute;
+    width: 582px;
+    height: 433px;
+    background: radial-gradient(30% 57.61% at 61.7% 18.78%, rgba(#c955ff, 0.75) 0%, rgba(#FDE29C, 0.15) 100%);
+    filter: blur(100px);
+    top: -7rem;
+    right: -7rem;
+    transform: skewX(15deg);
+}
+.phone-bottom{
+    position: absolute;
+    width: 411px;
+    height: 371px;
+    left: calc(256px);
+    bottom: -2rem;
+    background: radial-gradient(63.57% 81.24% at 29.44% -4.85%, rgba(#55F5FF, 0.9) 0%, rgba(#FD9CD0, 0.1) 96.17%);
+    filter: blur(100px);
+    transform: rotate(-145deg);
+}

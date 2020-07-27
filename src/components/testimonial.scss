@@ -1,0 +1,81 @@
+.testimonial{
+    &__wrapper{
+        grid-column: 4 / 10;
+        @media all and (max-width: 667px){
+            grid-column: span 4;
+        }
+        h2{
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+        h3{
+            font-weight: 400;
+            line-height: 1.5;
+            margin-bottom: 3rem;
+        }
+    }
+    &__content,
+    &__author{
+        text-align: center;
+    }
+    &__author{
+        img{
+            border-radius: 100%;
+            margin-bottom: 1rem;
+            box-shadow: 0px -10px 30px rgba(87, 255, 195, 0.29), 
+                        0px 10px 30px rgba(201, 85, 255, 0.4), 
+                        10px 0px 30px rgba(255, 245, 158, 0.4), 
+                        -10px 0px 30px rgba(102, 158, 242, 0.4);
+
+        }
+        &__detail{
+            h4{
+                font-weight: 400;
+                line-height: 1.15;
+                margin-bottom: 0;
+            }
+            p{
+                margin: 0;
+                line-height: 1.15;
+                font-size: 1.25rem;
+                font-weight: 300;
+            }
+        }
+    }
+    &__slider{
+        position: relative;
+        z-index: 2;
+        .swiper-wrapper{
+            padding-bottom: 4rem;
+        }
+        .swiper-pagination{
+            bottom: 0;
+            .swiper-pagination-bullet{
+                background-color: rgba(#301649, 0.7);
+                width: 12px;
+                height: 12px;
+                &:hover{
+                    background-color: rgba(#301649, 1);
+                }
+            }
+            .swiper-pagination-bullet-active{
+                background-color: rgba(#301649, 1);
+            }
+        }
+    }
+    &__gradient{
+        margin-top: -18rem;
+        position: relative;
+        z-index: 1; 
+        pointer-events: none;
+        @media all and (max-width: 667px){
+            margin-top: -7rem;
+        }
+        @media all and (min-width: 668px) and (max-width: 1023px){
+            margin-top: -12rem;
+        }
+        img{
+            width: 100%;
+        }
+    }
+}
